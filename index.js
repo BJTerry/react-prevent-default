@@ -1,9 +1,12 @@
 module.exports = function preventDefault(handler){
     return function(){
-        var last = arguments[arguments.length - 1];
-        if(last && last.preventDefault){
-            last.preventDefault();
+        for(var x = 0; x < arguments.length; x++){
+            var e = arguments[x];
+            if(e && e.preventDefault){
+                e.preventDefault();
+                break;
+            }
         }
         return handler.apply(this, arguments);
-    }
+    };
 };
