@@ -18,4 +18,15 @@ describe('preventDefault', function() {
         f(e); // This is what the browser does
         expect(spy).to.have.been.called();
     });
+    it('calls the last function with the right this', function(){
+        var futureThis = {a: 1},
+            thisCheck;
+
+        var handler = function(){
+            thisCheck = this;
+        };
+        var f = pd(handler.bind(futureThis, 1, 2, 3));
+        f({});
+        expect(thisCheck).to.equal(futureThis);
+    });
 });
