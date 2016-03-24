@@ -1,0 +1,20 @@
+{
+  "name": "react-prevent-default",
+  "version": "1.0.0",
+  "description": "Takes a function and returns a function that calls preventDefault on the last argument of the function",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/BJTerry/react-prevent-default"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "prevent-default",
+    "preventDefault"
+  ],
+  "author": "BJ Terry",
+  "license": "MIT"
+}
